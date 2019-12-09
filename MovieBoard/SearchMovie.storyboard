@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieList" id="Qcu-bg-zes">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieList" id="Qcu-bg-zes" customClass="SearchTableViewCell" customModule="MovieBoard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="201.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qcu-bg-zes" id="1R5-0b-GVb">
@@ -33,12 +33,6 @@
                                                         <constraint firstAttribute="width" constant="150" id="WCy-X9-QIp"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xs5-P2-MQx">
-                                                    <rect key="frame" x="158" y="13.5" width="55.5" height="26.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRP-zq-3QG">
                                                     <rect key="frame" x="158" y="43" width="46.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -75,6 +69,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLq-Jz-mtY">
+                                                    <rect key="frame" x="356" y="168" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Add"/>
+                                                    <connections>
+                                                        <action selector="addbutton:" destination="Qcu-bg-zes" eventType="touchUpInside" id="Ecm-YO-sWf"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xs5-P2-MQx">
+                                                    <rect key="frame" x="158" y="11" width="92" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55.5" id="gEA-4d-E1z"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="W17-IO-vqK" secondAttribute="bottom" constant="3" id="17M-38-0vd"/>
@@ -97,6 +108,16 @@
                                                 <constraint firstItem="cYV-pG-khg" firstAttribute="top" secondItem="nRP-zq-3QG" secondAttribute="bottom" constant="3" id="vwl-J5-jB2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imagelabel" destination="W17-IO-vqK" id="EUT-5m-wAF"/>
+                                            <outlet property="label1" destination="Xs5-P2-MQx" id="fjq-2c-bcw"/>
+                                            <outlet property="label2" destination="nRP-zq-3QG" id="7DL-bN-ggv"/>
+                                            <outlet property="label3" destination="cYV-pG-khg" id="cgN-BB-dk8"/>
+                                            <outlet property="label4" destination="gCX-Sa-DjY" id="Tkn-Qv-xh0"/>
+                                            <outlet property="label5" destination="Rs9-Zw-heB" id="1G3-e8-xwj"/>
+                                            <outlet property="label6" destination="tL9-3U-CXu" id="zUV-9D-gL4"/>
+                                            <outlet property="label7" destination="2ON-JG-zoK" id="lrX-Hd-oKm"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

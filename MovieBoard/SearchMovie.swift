@@ -8,6 +8,12 @@
 
 import Foundation
 import UIKit
+import CoreData
+
+var mymovielist:[movieList]=[]
+        
+    
+    
 
 class SearchMovie: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
@@ -16,7 +22,6 @@ class SearchMovie: UIViewController {
        var recognizer = UITapGestureRecognizer(target:self, action: #selector(dismissKeyboard))
        return recognizer
      }()
-    
     var searchResult:[movieList] = []
     let NaverAPI = naverAPI()
     
@@ -25,11 +30,8 @@ class SearchMovie: UIViewController {
     }
 
 
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationController?.navigationBar.prefersLargeTitles = true
         // Do any additional setup after loading the view.
     }
@@ -59,42 +61,71 @@ extension SearchMovie: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieList", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieList", for: indexPath) as? SearchTableViewCell
+        cell?.cellDelegate = self
+        cell?.index = indexPath
         
         let item = searchResult[indexPath.row]
-        configureText(for: cell, with: item)
-        configureImage(for: cell, with: item)
-        return cell
-    }
-    
-    func configureText(for cell: UITableViewCell, with item: movieList) {
-        if let label1 = cell.viewWithTag(1001) as? UILabel {
-            label1.text = item.title
-        }
-        if let label2 = cell.viewWithTag(1002) as? UILabel {
-            label2.text = item.subtitle
-        }
-        if let label3 = cell.viewWithTag(1003) as? UILabel {
-            label3.text = "pubDate: " + item.pubDate
-        }
-        if let label4 = cell.viewWithTag(1004) as? UILabel {
-            label4.text = "director: " + item.director
-        }
-        if let label5 = cell.viewWithTag(1005) as? UILabel {
-            label5.text = "actor: " + item.actor
-        }
-        if let label6 = cell.viewWithTag(1006) as? UILabel {
-            label6.text = "user rating: " + item.userRating
-        }
-        if let label7 = cell.viewWithTag(1007) as? UILabel {
-            label7.text = item.link
-        }
-    }
-    
-    func configureImage(for cell: UITableViewCell, with item: movieList) {
-        if let label = cell.viewWithTag(10) as? UIImageView {
-            label.image = str2Img(imageStr: item.image)
-        }
+        
+        cell?.label1.text = item.title
+        cell?.label2.text = item.subtitle
+        cell?.label3.text = "pubDate: " + item.pubDate
+        cell?.label4.text = "director: " + item.director
+        cell?.label5.text = "actor: " + item.actor
+        cell?.label6.text = "user rating: " + item.userRating
+        cell?.label7.text = item.link
+        cell?.imagelabel.image = str2Img(imageStr: item.image)
+//        configureText(for: cell, with: item)
+//        configureImage(for: cell, with: item)
+//
+        return cell!
     }
 
+//    func configureText(for cell: UITableViewCell, with item: movieList) {
+//        if let label1 = cell.viewWithTag(1001) as? UILabel {
+//            label1.text = item.title
+//        }
+//        if let label2 = cell.viewWithTag(1002) as? UILabel {
+//            label2.text = item.subtitle
+//        }
+//        if let label3 = cell.viewWithTag(1003) as? UILabel {
+//            label3.text = "pubDate: " + item.pubDate
+//        }
+//        if let label4 = cell.viewWithTag(1004) as? UILabel {
+//            label4.text = "director: " + item.director
+//        }
+//        if let label5 = cell.viewWithTag(1005) as? UILabel {
+//            label5.text = "actor: " + item.actor
+//        }
+//        if let label6 = cell.viewWithTag(1006) as? UILabel {
+//            label6.text = "user rating: " + item.userRating
+//        }
+//        if let label7 = cell.viewWithTag(1007) as? UILabel {
+//            label7.text = item.link
+//        }
+//    }
+//
+//    func configureImage(for cell: UITableViewCell, with item: movieList) {
+//        if let label = cell.viewWithTag(10) as? UIImageView {
+//            label.image = str2Img(imageStr: item.image)
+        }
+//    }
+
+
+
+extension SearchMovie: (SearchTabelViewprotocol){
+    func onClickCell(index: Int) {
+        print(searchResult[index].title + " is clicked")
+        mymovielist.append(searchResult[index])
+//        UserDefaults.standard.set(mymovielist, forKey: "mymovielist")
+//        for i in 0...mymovielist.count-1{
+//            print(mymovielist[i].title)
+//        }
+        
+//        listname.append(searchResult[index])
+        
+//        savedlist.setProperty(_property: searchResult[index].title)
+//        print(savedlist.getproperty)
+    }
+        
 }

@@ -20,6 +20,8 @@
 		04CF3B652379B66200548FE6 /* MovieBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF3B642379B66200548FE6 /* MovieBoardTests.swift */; };
 		04CF3B702379B66200548FE6 /* MovieBoardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF3B6F2379B66200548FE6 /* MovieBoardUITests.swift */; };
 		04EC949C23805A30007B7D43 /* Jason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC949B23805A30007B7D43 /* Jason.swift */; };
+		EBC986B3239E181C00113972 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC986B2239E181C00113972 /* SearchTableViewCell.swift */; };
+		EBC986BD239E976F00113972 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC986BC239E976F00113972 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		04CF3B6F2379B66200548FE6 /* MovieBoardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBoardUITests.swift; sourceTree = "<group>"; };
 		04CF3B712379B66200548FE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04EC949B23805A30007B7D43 /* Jason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jason.swift; sourceTree = "<group>"; };
+		EBC986B2239E181C00113972 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		EBC986BC239E976F00113972 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				04CF3B4C2379B66000548FE6 /* MovieBoard */,
-				04CF3B632379B66200548FE6 /* MovieBoardTests */,
 				04CF3B6E2379B66200548FE6 /* MovieBoardUITests */,
 				04CF3B4B2379B66000548FE6 /* Products */,
 			);
@@ -114,13 +117,16 @@
 				04CF3B532379B66000548FE6 /* Main.storyboard */,
 				04CF3B512379B66000548FE6 /* ViewController.swift */,
 				04CF3B562379B66100548FE6 /* Assets.xcassets */,
+				045E856B2386DA6D00D77F18 /* SearchMovie.storyboard */,
 				04CF3B582379B66100548FE6 /* LaunchScreen.storyboard */,
 				04CF3B5B2379B66100548FE6 /* Info.plist */,
-				045E856B2386DA6D00D77F18 /* SearchMovie.storyboard */,
 				045E856D2386DA7C00D77F18 /* SearchMovie.swift */,
 				044520C7238A6ACD004E8CEF /* searchBar.swift */,
 				04EC949B23805A30007B7D43 /* Jason.swift */,
 				044520C9238A7877004E8CEF /* naverAPI.swift */,
+				EBC986B2239E181C00113972 /* SearchTableViewCell.swift */,
+				EBC986BC239E976F00113972 /* CollectionViewCell.swift */,
+				04CF3B632379B66200548FE6 /* MovieBoardTests */,
 			);
 			path = MovieBoard;
 			sourceTree = "<group>";
@@ -277,9 +283,11 @@
 			files = (
 				04CF3B522379B66000548FE6 /* ViewController.swift in Sources */,
 				044520CA238A7877004E8CEF /* naverAPI.swift in Sources */,
+				EBC986BD239E976F00113972 /* CollectionViewCell.swift in Sources */,
 				04CF3B4E2379B66000548FE6 /* AppDelegate.swift in Sources */,
 				045E856E2386DA7C00D77F18 /* SearchMovie.swift in Sources */,
 				04CF3B502379B66000548FE6 /* SceneDelegate.swift in Sources */,
+				EBC986B3239E181C00113972 /* SearchTableViewCell.swift in Sources */,
 				04EC949C23805A30007B7D43 /* Jason.swift in Sources */,
 				044520C8238A6ACD004E8CEF /* searchBar.swift in Sources */,
 			);
